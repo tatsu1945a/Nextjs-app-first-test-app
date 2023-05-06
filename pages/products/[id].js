@@ -31,8 +31,16 @@ import styles from "../../styles/Home.module.css";
 //   };
 // }
 
+const Nav = () => {
+  const router = useRouter();
+  console.log(router.pathname)
+}
+
+
 export async function getServerSideProps({ params }) {
-  const req = await fetch(`http://localhost:3000/${params.id}.json`);
+  //const req = await fetch(`http://localhost:3000/${params.id}.json`);
+  const req = await fetch(`https://nextjs-app-first-test-app.vercel.app/${params.id}.json`);
+  
   const data = await req.json();
 
   return {
